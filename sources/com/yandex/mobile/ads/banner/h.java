@@ -1,0 +1,13 @@
+package com.yandex.mobile.ads.banner;
+
+import android.content.Context;
+import android.view.View;
+
+/* JADX INFO: loaded from: classes2.dex */
+interface h {
+    void a(Context context, View view);
+
+    void onAttachedToWindow();
+
+    void onDetachedFromWindow();
+}
