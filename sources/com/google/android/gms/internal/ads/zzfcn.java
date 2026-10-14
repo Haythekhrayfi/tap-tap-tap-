@@ -1,0 +1,12 @@
+package com.google.android.gms.internal.ads;
+
+/* JADX INFO: loaded from: classes2.dex */
+public final class zzfcn {
+    public final zzfcd zza;
+    public final zzfcp zzb;
+
+    public zzfcn(zzfcd zzfcdVar, zzfcp zzfcpVar) {
+        this.zza = zzfcdVar;
+        this.zzb = zzfcpVar;
+    }
+}

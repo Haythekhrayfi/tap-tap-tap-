@@ -1,0 +1,10 @@
+package com.google.android.gms.internal.ads;
+
+/* JADX INFO: loaded from: classes2.dex */
+final class zzfpf {
+    private zzfpf() {
+    }
+
+    public /* synthetic */ zzfpf(zzfpe zzfpeVar) {
+    }
+}
