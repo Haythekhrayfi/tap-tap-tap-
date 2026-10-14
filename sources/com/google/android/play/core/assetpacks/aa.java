@@ -1,0 +1,33 @@
+package com.google.android.play.core.assetpacks;
+
+import android.os.RemoteException;
+
+/* JADX INFO: loaded from: classes2.dex */
+final class aa extends com.google.android.play.core.internal.ag {
+
+    /* JADX INFO: renamed from: a, reason: collision with root package name */
+    public final /* synthetic */ String f11815a;
+
+    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    public final /* synthetic */ com.google.android.play.core.tasks.i f11816b;
+
+    /* JADX INFO: renamed from: c, reason: collision with root package name */
+    public final /* synthetic */ ar f11817c;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public aa(ar arVar, com.google.android.play.core.tasks.i iVar, String str, com.google.android.play.core.tasks.i iVar2) {
+        super(iVar);
+        this.f11817c = arVar;
+        this.f11815a = str;
+        this.f11816b = iVar2;
+    }
+
+    @Override // com.google.android.play.core.internal.ag
+    public final void a() {
+        try {
+            ((com.google.android.play.core.internal.s) this.f11817c.f11872e.b()).e(this.f11817c.f11870c, ar.c(0, this.f11815a), ar.e(), new ak(this.f11817c, this.f11816b, (short[]) null));
+        } catch (RemoteException e10) {
+            ar.f11868a.a(e10, "removePack(%s)", this.f11815a);
+        }
+    }
+}
