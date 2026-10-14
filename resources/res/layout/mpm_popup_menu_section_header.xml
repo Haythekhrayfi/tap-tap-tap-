@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <View
+        android:id="@+id/mpm_popup_menu_section_separator"
+        android:background="?attr/mpm_separatorColor"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mpm_popup_menu_item_section_separator_height"
+        android:layout_marginTop="@dimen/mpm_popup_menu_item_section_separator_margin_vertical"
+        android:layout_marginBottom="@dimen/mpm_popup_menu_item_section_separator_margin_vertical"/>
+    <TextView
+        android:textSize="@dimen/mpm_popup_menu_item_section_label_text_size"
+        android:textColor="?attr/mpm_secondaryTextColor"
+        android:ellipsize="end"
+        android:id="@+id/mpm_popup_menu_section_header_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/mpm_popup_menu_item_padding_horizontal"
+        android:layout_marginRight="@dimen/mpm_popup_menu_item_padding_horizontal"
+        android:layout_marginBottom="@dimen/mpm_popup_menu_item_section_label_margin_bottom"
+        android:lines="1"
+        android:layout_marginStart="@dimen/mpm_popup_menu_item_padding_horizontal"
+        android:layout_marginEnd="@dimen/mpm_popup_menu_item_padding_horizontal"/>
+</LinearLayout>

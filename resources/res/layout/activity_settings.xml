@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:paddingLeft="@dimen/margin_padding_size_large"
+        android:paddingRight="@dimen/margin_padding_size_large"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_padding_size_medium"
+        android:layout_marginBottom="@dimen/margin_padding_size_medium">
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"/>
+        <TextView
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/settings"
+            fontPath="fonts/jakarta_bold.ttf"/>
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <com.zipoapps.ads.PhShimmerBannerAdView
+        android:id="@+id/banner_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:banner_size="adaptive_anchored"
+        app:shimmer_base_color="#ffffffff"
+        app:shimmer_highlight_color="#ffb3b3b3"/>
+</LinearLayout>

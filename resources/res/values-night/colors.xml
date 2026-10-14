@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="applovin_sdk_consentFlowGdprBackground">#ff121212</color>
+    <color name="applovin_sdk_consentFlowGdprSwitchTrackDisabled">#ff818282</color>
+    <color name="applovin_sdk_consentFlowGdprTextColor">#ffffffff</color>
+    <color name="grey_blue_800">#ffd5dadd</color>
+    <color name="ph_black">#ffffffff</color>
+    <color name="ph_dark_gray">#ffd5dadd</color>
+    <color name="ph_gray_background">#ff111111</color>
+    <color name="ph_light_grey">#ffaaaaaa</color>
+    <color name="ph_rate_dialog_background">#ff333333</color>
+    <color name="ph_splash_background">#ff333333</color>
+    <color name="ph_text_dark">#ffeeeeee</color>
+    <color name="ph_white">#ff000000</color>
+    <color name="ph_white_background">#ff333333</color>
+    <color name="rate_us_cta_btn_disabled">#ff525252</color>
+    <color name="rate_us_description_text_color">#b0f4f4f4</color>
+    <color name="rate_us_title_text_color">#ffffffff</color>
+</resources>

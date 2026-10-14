@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/popupSeconds"
+        android:title="Convert seconds to milliseconds"/>
+    <item
+        android:id="@+id/popupMinutes"
+        android:title="Convert minutes to milliseconds"/>
+</menu>
