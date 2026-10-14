@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/itemPrepareContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:textSize="18sp"
+        android:id="@+id/oneFingerTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_padding_size_large"
+        android:layout_marginBottom="@dimen/margin_padding_size_large"
+        android:text="One finger mode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/TextStyleBold"/>
+    <ImageView
+        android:id="@+id/oneFingerImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/margin_padding_size_medium"
+        android:layout_marginTop="@dimen/margin_padding_size_large"
+        android:layout_marginRight="@dimen/margin_padding_size_medium"
+        android:layout_marginBottom="@dimen/margin_padding_size_large"
+        app:layout_constraintBottom_toTopOf="@+id/banner_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/oneFingerTitleText"/>
+    <com.zipoapps.ads.PhShimmerBannerAdView
+        android:layout_gravity="bottom"
+        android:id="@+id/banner_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:banner_size="adaptive_anchored"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:shimmer_base_color="#ffffffff"
+        app:shimmer_highlight_color="#ffb3b3b3"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
