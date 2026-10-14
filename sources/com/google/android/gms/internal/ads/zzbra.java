@@ -1,0 +1,68 @@
+package com.google.android.gms.internal.ads;
+
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
+import android.os.RemoteException;
+import com.google.android.gms.ads.nativead.NativeAd;
+import com.google.android.gms.dynamic.IObjectWrapper;
+import com.google.android.gms.dynamic.ObjectWrapper;
+
+/* JADX INFO: loaded from: classes2.dex */
+public final class zzbra extends NativeAd.Image {
+    private final zzber zza;
+    private final Drawable zzb;
+    private final Uri zzc;
+    private final double zzd;
+
+    public zzbra(zzber zzberVar) {
+        Drawable drawable;
+        double dZzb;
+        this.zza = zzberVar;
+        Uri uriZze = null;
+        try {
+            IObjectWrapper iObjectWrapperZzf = zzberVar.zzf();
+            drawable = iObjectWrapperZzf != null ? (Drawable) ObjectWrapper.unwrap(iObjectWrapperZzf) : null;
+        } catch (RemoteException e10) {
+            zzbzr.zzh("", e10);
+        }
+        this.zzb = drawable;
+        try {
+            uriZze = this.zza.zze();
+        } catch (RemoteException e11) {
+            zzbzr.zzh("", e11);
+        }
+        this.zzc = uriZze;
+        try {
+            dZzb = this.zza.zzb();
+        } catch (RemoteException e12) {
+            zzbzr.zzh("", e12);
+            dZzb = 1.0d;
+        }
+        this.zzd = dZzb;
+        try {
+            this.zza.zzd();
+        } catch (RemoteException e13) {
+            zzbzr.zzh("", e13);
+        }
+        try {
+            this.zza.zzc();
+        } catch (RemoteException e14) {
+            zzbzr.zzh("", e14);
+        }
+    }
+
+    @Override // com.google.android.gms.ads.nativead.NativeAd.Image
+    public final Drawable getDrawable() {
+        return this.zzb;
+    }
+
+    @Override // com.google.android.gms.ads.nativead.NativeAd.Image
+    public final double getScale() {
+        return this.zzd;
+    }
+
+    @Override // com.google.android.gms.ads.nativead.NativeAd.Image
+    public final Uri getUri() {
+        return this.zzc;
+    }
+}

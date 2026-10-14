@@ -1,0 +1,19 @@
+package com.google.android.gms.internal.ads;
+
+import java.util.Set;
+
+/* JADX INFO: loaded from: classes2.dex */
+public final class zzcxd extends zzdaq {
+    public zzcxd(Set set) {
+        super(set);
+    }
+
+    public final synchronized void zza() {
+        zzp(new zzdap() { // from class: com.google.android.gms.internal.ads.zzcxc
+            @Override // com.google.android.gms.internal.ads.zzdap
+            public final void zza(Object obj) {
+                ((zzcxf) obj).zzg();
+            }
+        });
+    }
+}

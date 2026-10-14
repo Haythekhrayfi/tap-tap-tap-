@@ -1,0 +1,6 @@
+package com.google.android.gms.internal.ads;
+
+/* JADX INFO: loaded from: classes2.dex */
+public final class zzbcv {
+    public static final zzbcr zza = zzbcr.zzb("gads:device_info_caching_expiry_ms:expiry", 300000);
+}
