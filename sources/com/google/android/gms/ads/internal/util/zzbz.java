@@ -1,0 +1,29 @@
+package com.google.android.gms.ads.internal.util;
+
+/* JADX INFO: loaded from: classes.dex */
+public final class zzbz {
+    private long zza;
+    private long zzb = Long.MIN_VALUE;
+    private final Object zzc = new Object();
+
+    public zzbz(long j10) {
+        this.zza = j10;
+    }
+
+    public final void zza(long j10) {
+        synchronized (this.zzc) {
+            this.zza = j10;
+        }
+    }
+
+    public final boolean zzb() {
+        synchronized (this.zzc) {
+            long jElapsedRealtime = com.google.android.gms.ads.internal.zzt.zzB().elapsedRealtime();
+            if (this.zzb + this.zza > jElapsedRealtime) {
+                return false;
+            }
+            this.zzb = jElapsedRealtime;
+            return true;
+        }
+    }
+}
