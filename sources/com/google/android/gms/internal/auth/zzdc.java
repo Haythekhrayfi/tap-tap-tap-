@@ -1,0 +1,146 @@
+package com.google.android.gms.internal.auth;
+
+import android.content.Context;
+import java.util.Objects;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
+import javax.annotation.Nullable;
+
+/* JADX INFO: loaded from: classes2.dex */
+public abstract class zzdc {
+    public static final /* synthetic */ int zzd = 0;
+
+    @Nullable
+    private static volatile zzda zze;
+    private static volatile boolean zzf;
+    public final zzcz zzb;
+    public final String zzc;
+    private final Object zzj;
+    private volatile int zzk = -1;
+    private volatile Object zzl;
+    private final boolean zzm;
+    private static final Object zza = new Object();
+    private static final AtomicReference zzg = new AtomicReference();
+    private static final zzde zzh = new zzde(zzcu.zza, null);
+    private static final AtomicInteger zzi = new AtomicInteger();
+
+    public /* synthetic */ zzdc(zzcz zzczVar, String str, Object obj, boolean z10, zzdb zzdbVar) {
+        if (zzczVar.zzb == null) {
+            throw new IllegalArgumentException("Must pass a valid SharedPreferences file name or ContentProvider URI");
+        }
+        this.zzb = zzczVar;
+        this.zzc = str;
+        this.zzj = obj;
+        this.zzm = true;
+    }
+
+    public static void zzd() {
+        zzi.incrementAndGet();
+    }
+
+    public static void zze(final Context context) {
+        if (zze == null) {
+            Object obj = zza;
+            synchronized (obj) {
+                if (zze == null) {
+                    synchronized (obj) {
+                        zzda zzdaVar = zze;
+                        Context applicationContext = context.getApplicationContext();
+                        if (applicationContext != null) {
+                            context = applicationContext;
+                        }
+                        if (zzdaVar == null || zzdaVar.zza() != context) {
+                            zzcg.zzd();
+                            zzdd.zzc();
+                            zzco.zze();
+                            zze = new zzcd(context, zzdn.zza(new zzdj() { // from class: com.google.android.gms.internal.auth.zzct
+                                @Override // com.google.android.gms.internal.auth.zzdj
+                                public final Object zza() {
+                                    Context context2 = context;
+                                    int i10 = zzdc.zzd;
+                                    return zzcp.zza(context2);
+                                }
+                            }));
+                            zzi.incrementAndGet();
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public abstract Object zza(Object obj);
+
+    /* JADX WARN: Code duplicated, block: B:35:0x0096  */
+    public final Object zzb() {
+        zzcl zzclVarZza;
+        Object objZzb;
+        if (!this.zzm) {
+            Objects.requireNonNull(this.zzc, "flagName must not be null");
+        }
+        int i10 = zzi.get();
+        if (this.zzk < i10) {
+            synchronized (this) {
+                if (this.zzk < i10) {
+                    zzda zzdaVar = zze;
+                    if (zzdaVar == null) {
+                        throw new IllegalStateException("Must call PhenotypeFlag.init() first");
+                    }
+                    zzcz zzczVar = this.zzb;
+                    boolean z10 = zzczVar.zzf;
+                    if (zzczVar.zzb == null) {
+                        Context contextZza = zzdaVar.zza();
+                        String str = this.zzb.zza;
+                        zzclVarZza = zzdd.zza(contextZza, null, new Runnable() { // from class: com.google.android.gms.internal.auth.zzcs
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                zzdc.zzd();
+                            }
+                        });
+                    } else if (zzcq.zza(zzdaVar.zza(), this.zzb.zzb)) {
+                        boolean z11 = this.zzb.zzh;
+                        zzclVarZza = zzcg.zza(zzdaVar.zza().getContentResolver(), this.zzb.zzb, new Runnable() { // from class: com.google.android.gms.internal.auth.zzcs
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                zzdc.zzd();
+                            }
+                        });
+                    } else {
+                        zzclVarZza = null;
+                    }
+                    Object objZza = (zzclVarZza == null || (objZzb = zzclVarZza.zzb(zzc())) == null) ? null : zza(objZzb);
+                    if (objZza == null) {
+                        if (this.zzb.zze) {
+                            objZza = null;
+                        } else {
+                            String strZzc = zzco.zza(zzdaVar.zza()).zzb(this.zzb.zze ? null : this.zzc);
+                            if (strZzc != null) {
+                                objZza = zza(strZzc);
+                            } else {
+                                objZza = null;
+                            }
+                        }
+                        if (objZza == null) {
+                            objZza = this.zzj;
+                        }
+                    }
+                    zzdh zzdhVar = (zzdh) zzdaVar.zzb().zza();
+                    if (zzdhVar.zzb()) {
+                        zzci zzciVar = (zzci) zzdhVar.zza();
+                        zzcz zzczVar2 = this.zzb;
+                        String strZza = zzciVar.zza(zzczVar2.zzb, null, zzczVar2.zzd, this.zzc);
+                        objZza = strZza == null ? this.zzj : zza(strZza);
+                    }
+                    this.zzl = objZza;
+                    this.zzk = i10;
+                }
+            }
+        }
+        return this.zzl;
+    }
+
+    public final String zzc() {
+        String str = this.zzb.zzd;
+        return this.zzc;
+    }
+}
