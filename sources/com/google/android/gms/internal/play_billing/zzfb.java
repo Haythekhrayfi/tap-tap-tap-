@@ -1,0 +1,70 @@
+package com.google.android.gms.internal.play_billing;
+
+import java.util.Objects;
+
+/* JADX INFO: loaded from: classes2.dex */
+public final class zzfb extends zzcb implements zzdg {
+    private static final zzfb zzb;
+    private int zzd;
+    private int zze = 0;
+    private Object zzf;
+    private int zzg;
+    private zzfj zzh;
+    private zzfs zzi;
+
+    static {
+        zzfb zzfbVar = new zzfb();
+        zzb = zzfbVar;
+        zzcb.zzp(zzfb.class, zzfbVar);
+    }
+
+    private zzfb() {
+    }
+
+    public static /* synthetic */ void zzA(zzfb zzfbVar, int i10) {
+        zzfbVar.zzg = i10 - 1;
+        zzfbVar.zzd |= 1;
+    }
+
+    public static zzfa zzv() {
+        return (zzfa) zzb.zzg();
+    }
+
+    public static zzfb zzx(byte[] bArr, zzbn zzbnVar) throws zzci {
+        return (zzfb) zzcb.zzj(zzb, bArr, zzbnVar);
+    }
+
+    public static /* synthetic */ void zzy(zzfb zzfbVar, zzfj zzfjVar) {
+        Objects.requireNonNull(zzfjVar);
+        zzfbVar.zzh = zzfjVar;
+        zzfbVar.zzd |= 2;
+    }
+
+    public static /* synthetic */ void zzz(zzfb zzfbVar, zzfw zzfwVar) {
+        Objects.requireNonNull(zzfwVar);
+        zzfbVar.zzf = zzfwVar;
+        zzfbVar.zze = 4;
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.zzcb
+    public final Object zzu(int i10, Object obj, Object obj2) {
+        int i11 = i10 - 1;
+        if (i11 == 0) {
+            return (byte) 1;
+        }
+        if (i11 == 2) {
+            return zzcb.zzm(zzb, "\u0001\u0004\u0001\u0001\u0001\u0004\u0004\u0000\u0000\u0000\u0001᠌\u0000\u0002ဉ\u0001\u0003ဉ\u0002\u0004<\u0000", new Object[]{"zzf", "zze", "zzd", "zzg", zzfc.zza, "zzh", "zzi", zzfw.class});
+        }
+        if (i11 == 3) {
+            return new zzfb();
+        }
+        zzez zzezVar = null;
+        if (i11 == 4) {
+            return new zzfa(zzezVar);
+        }
+        if (i11 != 5) {
+            return null;
+        }
+        return zzb;
+    }
+}
