@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.zipoapps.premiumhelper.ui.preferences.common.RemoveAdsPreference
+        android:layout="@layout/ph_settings_section"
+        app:key="pref_remove_ads"/>
+    <com.zipoapps.premiumhelper.ui.preferences.common.PersonalizedAdsPreference
+        android:title="@string/ph_personalized_ads"
+        android:key="pref_personalized_ads"
+        android:summary="@string/ph_personalized_ads_summary"/>
+    <com.zipoapps.premiumhelper.ui.preferences.common.PremiumSupportPreference
+        android:layout="@layout/ph_settings_section"
+        app:key="pref_support"
+        app:support_email=""
+        app:vip_support_email=""/>
+    <com.zipoapps.premiumhelper.ui.preferences.common.RateUsPreference
+        android:layout="@layout/ph_settings_section"
+        app:key="pref_rate_us"/>
+    <Preference
+        android:layout="@layout/ph_settings_section"
+        android:key="pref_share_app"/>
+    <com.zipoapps.premiumhelper.ui.preferences.common.PrivacyPolicyPreference
+        android:layout="@layout/ph_settings_section"
+        app:key="pref_privacy_policy"/>
+    <com.zipoapps.premiumhelper.ui.preferences.common.TermsConditionsPreference
+        android:layout="@layout/ph_settings_section"
+        app:key="pref_terms"/>
+    <Preference
+        android:layout="@layout/ph_settings_section"
+        android:key="pref_delete_account"/>
+    <com.zipoapps.premiumhelper.ui.preferences.common.AppVersionPreference
+        android:layout="@layout/ph_settings_section"
+        app:key="pref_app_version"/>
+</PreferenceScreen>
