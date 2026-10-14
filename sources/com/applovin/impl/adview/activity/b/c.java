@@ -1,0 +1,299 @@
+package com.applovin.impl.adview.activity.b;
+
+import android.app.Activity;
+import android.graphics.PointF;
+import android.net.Uri;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+import com.applovin.impl.adview.h;
+import com.applovin.impl.adview.n;
+import com.applovin.impl.adview.v;
+import com.applovin.impl.adview.w;
+import com.applovin.impl.c.k;
+import com.applovin.impl.c.l;
+import com.applovin.impl.c.m;
+import com.applovin.impl.sdk.o;
+import com.applovin.impl.sdk.y;
+import com.applovin.sdk.AppLovinAdClickListener;
+import com.applovin.sdk.AppLovinAdDisplayListener;
+import com.applovin.sdk.AppLovinAdVideoPlaybackListener;
+import com.iab.omid.library.applovin.adsession.FriendlyObstructionPurpose;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
+/* JADX INFO: loaded from: classes.dex */
+public class c extends e {
+    private final com.applovin.impl.c.a O;
+    private final Set<k> P;
+
+    public c(com.applovin.impl.sdk.ad.e eVar, Activity activity, Map<String, Object> map, o oVar, AppLovinAdClickListener appLovinAdClickListener, AppLovinAdDisplayListener appLovinAdDisplayListener, AppLovinAdVideoPlaybackListener appLovinAdVideoPlaybackListener) {
+        super(eVar, activity, map, oVar, appLovinAdClickListener, appLovinAdDisplayListener, appLovinAdVideoPlaybackListener);
+        HashSet hashSet = new HashSet();
+        this.P = hashSet;
+        com.applovin.impl.c.a aVar = (com.applovin.impl.c.a) eVar;
+        this.O = aVar;
+        com.applovin.impl.c.a.c cVar = com.applovin.impl.c.a.c.VIDEO;
+        hashSet.addAll(aVar.a(cVar, l.f8928a));
+        a(com.applovin.impl.c.a.c.IMPRESSION);
+        a(cVar, "creativeView");
+        aVar.o().d();
+    }
+
+    private void I() {
+        if (!s() || this.P.isEmpty()) {
+            return;
+        }
+        if (y.a()) {
+            y yVar = this.f8352c;
+            StringBuilder sbA = defpackage.a.a("Firing ");
+            sbA.append(this.P.size());
+            sbA.append(" un-fired video progress trackers when video was completed.");
+            yVar.d("AppLovinFullscreenActivity", sbA.toString());
+        }
+        a(this.P);
+    }
+
+    private void a(com.applovin.impl.c.a.c cVar) {
+        a(cVar, com.applovin.impl.c.f.UNSPECIFIED);
+    }
+
+    private void a(com.applovin.impl.c.a.c cVar, com.applovin.impl.c.f fVar) {
+        a(cVar, "", fVar);
+    }
+
+    private void a(com.applovin.impl.c.a.c cVar, String str) {
+        a(cVar, str, com.applovin.impl.c.f.UNSPECIFIED);
+    }
+
+    private void a(com.applovin.impl.c.a.c cVar, String str, com.applovin.impl.c.f fVar) {
+        a(this.O.a(cVar, str), fVar);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void a(Set<k> set) {
+        a(set, com.applovin.impl.c.f.UNSPECIFIED);
+    }
+
+    private void a(Set<k> set, com.applovin.impl.c.f fVar) {
+        if (set == null || set.isEmpty()) {
+            return;
+        }
+        long seconds = TimeUnit.MILLISECONDS.toSeconds(((e) this).f8403z.I());
+        com.applovin.impl.c.o oVarAU = this.O.aU();
+        Uri uriA = oVarAU != null ? oVarAU.a() : null;
+        if (y.a()) {
+            y yVar = this.f8352c;
+            StringBuilder sbA = defpackage.a.a("Firing ");
+            sbA.append(set.size());
+            sbA.append(" tracker(s): ");
+            sbA.append(set);
+            yVar.b("AppLovinFullscreenActivity", sbA.toString());
+        }
+        m.a(set, seconds, uriA, fVar, this.f8351b);
+    }
+
+    @Override // com.applovin.impl.adview.activity.b.e
+    public void A() {
+        super.A();
+        a(com.applovin.impl.c.a.c.VIDEO, this.J ? "mute" : "unmute");
+        this.O.o().a(this.J);
+    }
+
+    @Override // com.applovin.impl.adview.activity.b.e
+    public void B() {
+        I();
+        if (!m.c(this.O)) {
+            if (y.a()) {
+                this.f8352c.b("AppLovinFullscreenActivity", "VAST ad does not have valid companion ad - dismissing...");
+            }
+            h();
+        } else {
+            if (this.M) {
+                return;
+            }
+            a(com.applovin.impl.c.a.c.COMPANION, "creativeView");
+            this.O.o().i();
+            super.B();
+        }
+    }
+
+    @Override // com.applovin.impl.adview.activity.b.e
+    public void a(PointF pointF, boolean z10) {
+        a(com.applovin.impl.c.a.c.VIDEO_CLICK);
+        this.O.o().o();
+        super.a(pointF, z10);
+    }
+
+    @Override // com.applovin.impl.adview.activity.b.e, com.applovin.impl.adview.activity.b.a
+    public void a(ViewGroup viewGroup) {
+        super.a(viewGroup);
+        ((e) this).H.a("PROGRESS_TRACKING", TimeUnit.SECONDS.toMillis(1L), new com.applovin.impl.adview.k.a() { // from class: com.applovin.impl.adview.activity.b.c.1
+            @Override // com.applovin.impl.adview.k.a
+            public void a() {
+                long seconds = TimeUnit.MILLISECONDS.toSeconds(c.this.K - (((e) c.this).f8403z.H() - ((e) c.this).f8403z.I()));
+                int iH = c.this.H();
+                HashSet hashSet = new HashSet();
+                for (k kVar : new HashSet(c.this.P)) {
+                    if (kVar.a(seconds, iH)) {
+                        hashSet.add(kVar);
+                        c.this.P.remove(kVar);
+                    }
+                }
+                c.this.a(hashSet);
+                if (iH >= 25 && iH < 50) {
+                    c.this.O.o().f();
+                    return;
+                }
+                if (iH >= 50 && iH < 75) {
+                    c.this.O.o().g();
+                } else if (iH >= 75) {
+                    c.this.O.o().h();
+                }
+            }
+
+            @Override // com.applovin.impl.adview.k.a
+            public boolean b() {
+                return !c.this.M;
+            }
+        });
+        ArrayList arrayList = new ArrayList();
+        com.applovin.impl.adview.a aVar = ((e) this).A;
+        if (aVar != null) {
+            arrayList.add(new com.applovin.impl.sdk.a.d(aVar, FriendlyObstructionPurpose.OTHER, "video stream buffering indicator"));
+        }
+        n nVar = ((e) this).B;
+        if (nVar != null) {
+            arrayList.add(new com.applovin.impl.sdk.a.d(nVar, FriendlyObstructionPurpose.CLOSE_AD, "skip button"));
+        }
+        h hVar = ((e) this).C;
+        if (hVar != null) {
+            arrayList.add(new com.applovin.impl.sdk.a.d(hVar, FriendlyObstructionPurpose.OTHER, "countdown clock"));
+        }
+        ProgressBar progressBar = ((e) this).F;
+        if (progressBar != null) {
+            arrayList.add(new com.applovin.impl.sdk.a.d(progressBar, FriendlyObstructionPurpose.OTHER, "progress bar"));
+        }
+        ProgressBar progressBar2 = ((e) this).G;
+        if (progressBar2 != null) {
+            arrayList.add(new com.applovin.impl.sdk.a.d(progressBar2, FriendlyObstructionPurpose.OTHER, "postitial progress bar"));
+        }
+        ImageView imageView = ((e) this).D;
+        if (imageView != null) {
+            arrayList.add(new com.applovin.impl.sdk.a.d(imageView, FriendlyObstructionPurpose.VIDEO_CONTROLS, "mute button"));
+        }
+        w wVar = ((e) this).E;
+        if (wVar != null) {
+            arrayList.add(new com.applovin.impl.sdk.a.d(wVar, FriendlyObstructionPurpose.VIDEO_CONTROLS, "generic webview overlay containing HTML controls"));
+        }
+        v vVar = this.f8356g;
+        if (vVar != null && vVar.b()) {
+            v vVar2 = this.f8356g;
+            arrayList.add(new com.applovin.impl.sdk.a.d(vVar2, FriendlyObstructionPurpose.NOT_VISIBLE, vVar2.getIdentifier()));
+        }
+        this.O.o().a(((e) this).f8402y, arrayList);
+    }
+
+    @Override // com.applovin.impl.adview.activity.b.e
+    public void c() {
+        a(com.applovin.impl.c.a.c.VIDEO, "skip");
+        this.O.o().n();
+        super.c();
+    }
+
+    @Override // com.applovin.impl.adview.activity.b.e
+    public void c(long j10) {
+        super.c(j10);
+        this.O.o().a(TimeUnit.MILLISECONDS.toSeconds(j10), com.applovin.impl.sdk.utils.w.c(this.f8351b));
+    }
+
+    @Override // com.applovin.impl.adview.activity.b.e
+    public void c(String str) {
+        a(com.applovin.impl.c.a.c.ERROR, com.applovin.impl.c.f.MEDIA_FILE_ERROR);
+        this.O.o().a(str);
+        super.c(str);
+    }
+
+    @Override // com.applovin.impl.adview.activity.b.e, com.applovin.impl.adview.activity.b.a
+    public void d() {
+        a((ViewGroup) null);
+    }
+
+    @Override // com.applovin.impl.adview.activity.b.e, com.applovin.impl.adview.activity.b.a
+    public void e() {
+        ((e) this).H.c();
+        super.e();
+    }
+
+    @Override // com.applovin.impl.adview.activity.b.a
+    public void f() {
+        super.f();
+        a(this.M ? com.applovin.impl.c.a.c.COMPANION : com.applovin.impl.c.a.c.VIDEO, "resume");
+        this.O.o().k();
+    }
+
+    @Override // com.applovin.impl.adview.activity.b.a
+    public void g() {
+        super.g();
+        a(this.M ? com.applovin.impl.c.a.c.COMPANION : com.applovin.impl.c.a.c.VIDEO, "pause");
+        this.O.o().j();
+    }
+
+    @Override // com.applovin.impl.adview.activity.b.e, com.applovin.impl.adview.activity.b.a
+    public void h() {
+        if (this.O != null) {
+            a(com.applovin.impl.c.a.c.VIDEO, "close");
+            a(com.applovin.impl.c.a.c.COMPANION, "close");
+        }
+        super.h();
+    }
+
+    @Override // com.applovin.impl.adview.activity.b.e, com.applovin.impl.adview.activity.b.a
+    public void v() {
+        long jAj;
+        int iT;
+        long millis = 0;
+        if (this.O.ai() >= 0 || this.O.aj() >= 0) {
+            if (this.O.ai() >= 0) {
+                jAj = this.O.ai();
+            } else {
+                com.applovin.impl.c.a aVar = this.O;
+                com.applovin.impl.c.n nVarAT = aVar.aT();
+                if (nVarAT == null || nVarAT.b() <= 0) {
+                    long j10 = this.K;
+                    if (j10 > 0) {
+                        millis = 0 + j10;
+                    }
+                } else {
+                    millis = 0 + TimeUnit.SECONDS.toMillis(nVarAT.b());
+                }
+                if (aVar.ak() && (iT = (int) aVar.t()) > 0) {
+                    millis += TimeUnit.SECONDS.toMillis(iT);
+                }
+                jAj = (long) ((((double) this.O.aj()) / 100.0d) * millis);
+            }
+            b(jAj);
+        }
+    }
+
+    @Override // com.applovin.impl.adview.activity.b.e
+    public void y() {
+        super.y();
+        com.applovin.impl.c.a aVar = this.O;
+        if (aVar != null) {
+            aVar.o().l();
+        }
+    }
+
+    @Override // com.applovin.impl.adview.activity.b.e
+    public void z() {
+        super.z();
+        com.applovin.impl.c.a aVar = this.O;
+        if (aVar != null) {
+            aVar.o().m();
+        }
+    }
+}
