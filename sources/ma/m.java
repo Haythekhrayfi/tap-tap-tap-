@@ -1,0 +1,34 @@
+package ma;
+
+/* JADX INFO: loaded from: classes3.dex */
+@oc.e(c = "com.zipoapps.premiumhelper.PremiumHelper", f = "PremiumHelper.kt", l = {920, 921}, m = "initPurchases")
+public final class m extends oc.c {
+
+    /* JADX INFO: renamed from: c, reason: collision with root package name */
+    public Object f33485c;
+
+    /* JADX INFO: renamed from: d, reason: collision with root package name */
+    public Object f33486d;
+
+    /* JADX INFO: renamed from: e, reason: collision with root package name */
+    public /* synthetic */ Object f33487e;
+
+    /* JADX INFO: renamed from: f, reason: collision with root package name */
+    public final /* synthetic */ h f33488f;
+
+    /* JADX INFO: renamed from: g, reason: collision with root package name */
+    public int f33489g;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m(h hVar, mc.d<? super m> dVar) {
+        super(dVar);
+        this.f33488f = hVar;
+    }
+
+    @Override // oc.a
+    public final Object invokeSuspend(Object obj) {
+        this.f33487e = obj;
+        this.f33489g |= Integer.MIN_VALUE;
+        return h.b(this.f33488f, this);
+    }
+}

@@ -1,0 +1,14 @@
+package h4;
+
+/* JADX INFO: loaded from: classes.dex */
+public class c extends d4.a {
+    public c(float f10) {
+        super(f10);
+    }
+
+    @Override // d4.a
+    public Float a(float f10, float f11, float f12, float f13) {
+        float f14 = (f10 / f13) - 1.0f;
+        return Float.valueOf((((f14 * f14 * f14) + 1.0f) * f12) + f11);
+    }
+}
