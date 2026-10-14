@@ -1,0 +1,19 @@
+package com.yandex.metrica.impl.ob;
+
+import java.util.List;
+
+/* JADX INFO: renamed from: com.yandex.metrica.impl.ob.c6, reason: case insensitive filesystem */
+/* JADX INFO: loaded from: classes.dex */
+public class C1551c6 extends R5<AbstractC1948s5> {
+    public C1551c6(Y5 y10) {
+        super(y10);
+    }
+
+    @Override // com.yandex.metrica.impl.ob.R5
+    public void a(List<AbstractC1948s5> list) {
+        list.add(a().m());
+        list.add(a().n());
+        list.add(a().q());
+        list.add(a().f());
+    }
+}
