@@ -1,1 +1,1 @@
-This folder contains the embedded APK resource extracted from the supplied app.
+The embedded APK binary in this folder was omitted from the repository. Other decoded resources are included under `resources/`.
