@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/mpm_popup_menu_item_padding_horizontal"
+    android:paddingRight="@dimen/mpm_popup_menu_item_padding_horizontal"
+    android:focusable="true"
+    android:clickable="true"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/mpm_popup_menu_item_height"
+    android:paddingStart="@dimen/mpm_popup_menu_item_padding_horizontal"
+    android:paddingEnd="@dimen/mpm_popup_menu_item_padding_horizontal"
+    style="@style/Widget.MPM.Item">
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/mpm_popup_menu_item_icon"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/mpm_popup_menu_item_icon_margin_end"
+        android:layout_marginEnd="@dimen/mpm_popup_menu_item_icon_margin_end"
+        app:tint="?attr/mpm_activeIconColor"/>
+    <TextView
+        android:textSize="@dimen/mpm_popup_menu_item_label_text_size"
+        android:textColor="?attr/mpm_primaryTextColor"
+        android:ellipsize="end"
+        android:layout_gravity="start|center_vertical"
+        android:id="@+id/mpm_popup_menu_item_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:layout_weight="1"
+        android:textAlignment="viewStart"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/mpm_popup_menu_item_nested_icon"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/mpm_popup_menu_item_icon_margin_end"
+        android:layout_marginStart="@dimen/mpm_popup_menu_item_icon_margin_end"
+        app:srcCompat="@drawable/mpm_ic_menu_end"
+        app:tint="?attr/mpm_activeIconColor"/>
+</LinearLayout>

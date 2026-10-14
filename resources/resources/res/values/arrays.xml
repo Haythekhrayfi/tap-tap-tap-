@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="al_exo_playback_speeds">
+        <item>0.25x</item>
+        <item>0.5x</item>
+        <item>0.75x</item>
+        <item>@string/al_exo_controls_playback_speed_normal</item>
+        <item>1.25x</item>
+        <item>1.5x</item>
+        <item>2x</item>
+    </array>
+    <array name="al_exo_speed_multiplied_by_100">
+        <item>25</item>
+        <item>50</item>
+        <item>75</item>
+        <item>100</item>
+        <item>125</item>
+        <item>150</item>
+        <item>200</item>
+    </array>
+    <array name="cta_titles">
+        <item>@string/ph_start_premium_cta</item>
+        <item>@string/ph_start_3_day_trial_cta</item>
+        <item>@string/ph_start_7_day_trial_cta</item>
+        <item>@string/ph_start_30_day_trial_cta</item>
+    </array>
+    <array name="sku_monthly_prices">
+        <item>@string/sku_price_monthly_no_trial</item>
+        <item>@string/sku_price_monthly_3d_trial</item>
+        <item>@string/sku_price_monthly_7d_trial</item>
+        <item>@string/sku_price_monthly_30d_trial</item>
+    </array>
+    <array name="sku_weekly_prices">
+        <item>@string/sku_price_weekly_no_trial</item>
+        <item>@string/sku_price_weekly_3d_trial</item>
+        <item>@string/sku_price_weekly_7d_trial</item>
+        <item>@string/sku_price_weekly_30d_trial</item>
+    </array>
+    <array name="sku_yearly_prices">
+        <item>@string/sku_price_yearly_no_trial</item>
+        <item>@string/sku_price_yearly_3d_trial</item>
+        <item>@string/sku_price_yearly_7d_trial</item>
+        <item>@string/sku_price_yearly_30d_trial</item>
+    </array>
+</resources>

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:textSize="18sp"
+            android:id="@+id/adbTitle"
+            android:paddingLeft="@dimen/margin_padding_size_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_padding_size_large"
+            android:layout_marginBottom="@dimen/margin_padding_size_large"
+            android:text="@string/adb_config"
+            fontPath="fonts/jakarta_bold.ttf"
+            style="@style/TextStyleBold"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/adbContainer"
+            android:padding="@dimen/margin_padding_size_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/experimental_features_guide"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/margin_padding_size_large"/>
+            <FrameLayout
+                android:background="@drawable/accent_background"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_padding_size_medium"
+                    android:text="@string/own_risk"
+                    fontPath="fonts/jakarta_bold.ttf"/>
+            </FrameLayout>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/margin_padding_size_large"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/to_start_enable_adb"/>
+            <TextView
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1. Set up ADB"
+                fontPath="fonts/jakarta_bold.ttf"/>
+            <TextView
+                android:autoLink="web"
+                android:linksClickable="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="If you do not have ADB installed, check instructions below how to install ADB:\10https://www.xda-developers.com/install-adb-windows-macos-linux/"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/margin_padding_size_large"/>
+            <TextView
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2. Verify if device is properly connected to computer."
+                fontPath="fonts/jakarta_bold.ttf"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Type following command in terminal:"/>
+            <TextView
+                android:textSize="10sp"
+                android:textColor="@color/green"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_padding_size_small"
+                android:layout_marginBottom="@dimen/margin_padding_size_small"
+                android:text="adb devices"
+                android:fontFamily="monospace"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="If you see your device on the list, you can jump to next step."/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/margin_padding_size_large"/>
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/adbInstructionsAndroid9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3. Enable non-SDK access using adb."
+                    fontPath="fonts/jakarta_bold.ttf"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Type command in terminal and press enter:"/>
+                <TextView
+                    android:textSize="10sp"
+                    android:textColor="@color/green"
+                    android:scrollbars="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_padding_size_small"
+                    android:layout_marginBottom="@dimen/margin_padding_size_small"
+                    android:text="adb shell settings put global hidden_api_policy_pre_p_apps 1"
+                    android:fontFamily="monospace"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Type second command in terminal and press enter:"/>
+                <TextView
+                    android:textSize="10sp"
+                    android:textColor="@color/green"
+                    android:scrollbars="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_padding_size_small"
+                    android:layout_marginBottom="@dimen/margin_padding_size_small"
+                    android:text="adb shell settings put global hidden_api_policy_p_apps 1"
+                    android:fontFamily="monospace"/>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/adbInstructionsAndroid10"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3. Enable non-SDK access using adb."
+                    fontPath="fonts/jakarta_bold.ttf"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Type command in terminal and press enter:"/>
+                <TextView
+                    android:textSize="10sp"
+                    android:textColor="@color/green"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_padding_size_small"
+                    android:layout_marginBottom="@dimen/margin_padding_size_small"
+                    android:text="adb shell settings put global hidden_api_policy 1"
+                    android:fontFamily="monospace"/>
+            </LinearLayout>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/margin_padding_size_large"/>
+            <TextView
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4. After completing above steps, press button below to restart the app."
+                fontPath="fonts/jakarta_bold.ttf"/>
+            <Button
+                android:textColor="#ff000000"
+                android:id="@+id/adbRestartButton"
+                android:background="@drawable/ad_button"
+                android:padding="@dimen/margin_padding_size_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_padding_size_small"
+                android:text="RESTART THE APP"
+                fontPath="fonts/jakarta_bold.ttf"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/margin_padding_size_large"/>
+            <TextView
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="If you want to reset above changes, use following:"
+                fontPath="fonts/jakarta_bold.ttf"/>
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/adbInstructions2Android9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Type command in terminal and press enter:"/>
+                <TextView
+                    android:textSize="10sp"
+                    android:textColor="@color/green"
+                    android:scrollbars="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_padding_size_small"
+                    android:layout_marginBottom="@dimen/margin_padding_size_small"
+                    android:text="adb shell settings delete global hidden_api_policy_pre_p_apps"
+                    android:fontFamily="monospace"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Type second command in terminal and press enter:"/>
+                <TextView
+                    android:textSize="10sp"
+                    android:textColor="@color/green"
+                    android:scrollbars="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_padding_size_small"
+                    android:layout_marginBottom="@dimen/margin_padding_size_small"
+                    android:text="adb shell settings delete global hidden_api_policy_p_apps"
+                    android:fontFamily="monospace"/>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/adbInstructions2Android10"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Type command in terminal and press enter:"/>
+                <TextView
+                    android:textSize="10sp"
+                    android:textColor="@color/green"
+                    android:scrollbars="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_padding_size_small"
+                    android:layout_marginBottom="@dimen/margin_padding_size_small"
+                    android:text="adb shell settings delete global hidden_api_policy"
+                    android:fontFamily="monospace"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
